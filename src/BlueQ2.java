@@ -8,32 +8,39 @@ public class BlueQ2 {
      * a higher range. You can assume there will not be a tie, and neither head
      * nor root will be null.
      * 
-     * Example:
-     *   List:
-     *      7 -> 8 -> -2 -> 9 -> 21
-     *   Tree:
-     *            12
-     *          /    \
-     *         6      18
-     *        / \    /  
-     *       4   8  16  
-     *   Expected Answer: "list"
-     * 
-     * Explanation:
-     *   The largest number in the list is 21 and -2 is the smallest.
-     *   Thus the range of the list is 21 - -2 = 23
-     *   The largest number in the tree is 18, and 4 is the smallest.
-     *   Thus the range of the tree is 18 - 4 = 14
-     *   23 is bigger than 14, so the list has the bigger range.
-     *    
-     * 
      * @param head the head of the list
      * @param root the root of the tree
      * @return "list" if the list has a bigger range, "tree" otherwise
      */
     public static String biggerRange(ListNode head, TreeNode root) {
-        return null;
+        int listMin = head.data;
+        int listMax = head.data;
+
+        ListNode current = head;
+
+      rrent.next;
+        }
+
+        int listRange = listMax - listMin;
+
+        int treeMin = treeMinimum(root);
+        int treeMax = treeMaximum(root);
+        int treeRange = treeMax - treeMin;
+
+        if (listRange > treeRange) {
+            return "list";
+        }
+
+        return "tree";
     }
 
+   
 
+    private static int treeMaximum(TreeNode root) {
+        int maximum = root.data;
+um, treeMaximum(root.right));
+        }
+
+        return maximum;
+    }
 }
