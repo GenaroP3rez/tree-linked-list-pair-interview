@@ -18,7 +18,16 @@ public class BlueQ2 {
 
         ListNode current = head;
 
-      rrent.next;
+        while (current != null) {
+            if (current.data < listMin) {
+                listMin = current.data;
+            }
+
+            if (current.data > listMax) {
+                listMax = current.data;
+            }
+
+            current = current.next;
         }
 
         int listRange = listMax - listMin;
@@ -34,11 +43,29 @@ public class BlueQ2 {
         return "tree";
     }
 
-   
+    private static int treeMinimum(TreeNode root) {
+        int minimum = root.data;
+
+        if (root.left != null) {
+            minimum = Math.min(minimum, treeMinimum(root.left));
+        }
+
+        if (root.right != null) {
+            minimum = Math.min(minimum, treeMinimum(root.right));
+        }
+
+        return minimum;
+    }
 
     private static int treeMaximum(TreeNode root) {
         int maximum = root.data;
-um, treeMaximum(root.right));
+
+        if (root.left != null) {
+            maximum = Math.max(maximum, treeMaximum(root.left));
+        }
+
+        if (root.right != null) {
+            maximum = Math.max(maximum, treeMaximum(root.right));
         }
 
         return maximum;

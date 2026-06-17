@@ -34,7 +34,19 @@ public class RedQ2 {
         if (root == null) {
             return 0;
         }
-)
+
+        return root.data
+                + treeSum(root.left)
+                + treeSum(root.right);
+    }
+
+    private static int treeCount(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        return 1
+                + treeCount(root.left)
                 + treeCount(root.right);
     }
 }

@@ -28,4 +28,4 @@ public class RedQ1 {
 
         return sum;
     }
-}`
+}
