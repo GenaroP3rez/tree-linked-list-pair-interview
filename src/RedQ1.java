@@ -9,10 +9,23 @@ public class RedQ1 {
      * 
      * If head is null, return 0.
      * 
-     * @param head the had of the linked list
+     * @param head the head of the linked list
      * @return the sum of the elements at odd indexes
      */
     public static int oddIndexSum(ListNode head) {
-        return -1;
+        int sum = 0;
+        int index = 0;
+        ListNode current = head;
+
+        while (current != null) {
+            if (index % 2 != 0) {
+                sum += current.data;
+            }
+
+            current = current.next;
+            index++;
+        }
+
+        return sum;
     }
-}
+}`
